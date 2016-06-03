@@ -18,9 +18,7 @@ def calculate(word_problem):
 
     def do_operation():  # requires three tokens to execute each time.
         try:
-            operand_1 = int(get_next_token())
-            _operator = get_next_token()
-            operand_2 = int(get_next_token())
+            operand_1, _operator, operand_2 = int(get_next_token()), get_next_token(), int(get_next_token())
             tokens.append(ops[_operator](operand_1, operand_2))
             if len(tokens) >= 3:
                 do_operation()
